@@ -49,20 +49,36 @@ whyEdlyButton.addEventListener('click', () => {
 });
 
 
+function isParent(refNode, otherNode) {
+	var parent = otherNode.parentNode;
+	do {
+		if (refNode == parent) {
+			return true;
+		} else {
+			parent = parent.parentNode;
+		}
+	} while (parent);
+	return false;
+}
 
-solutionsSection.addEventListener('mouseout', () => {
-    solutionsSection.classList.remove('header-swipe');
-});
 
+solutionsSection.addEventListener("mouseout", function(ev){
+	if (!isParent(this, ev.relatedTarget)){
+        solutionsSection.classList.remove('header-swipe');
+	}
+}, false);
 
-resourcesSection.addEventListener('mouseout', () => {
-    resourcesSection.classList.remove('header-swipe');
-});
+resourcesSection.addEventListener("mouseout", function(ev){
+	if (!isParent(this, ev.relatedTarget)){
+        resourcesSection.classList.remove('header-swipe');
+	}
+}, false);
 
-
-whyEdlySection.addEventListener('mouseout', () => {
-    whyEdlySection.classList.remove('header-swipe');
-});
+whyEdlySection.addEventListener("mouseout", function(ev){
+	if (!isParent(this, ev.relatedTarget)){
+        whyEdlySection.classList.remove('header-swipe');
+	}
+}, false);
 
 
 hamBurgerButton.addEventListener('click', () => {
