@@ -8,6 +8,7 @@
 
 body {
     font-family: 'HK Grotesk', sans-serif;
+    color: rgb(101, 96, 96);
 }
 
 .header {
@@ -46,6 +47,10 @@ body {
 }
 
 .mobile-demo-list-item {
+    display: none;
+}
+
+.mobile-drop-btn {
     display: none;
 }
 
@@ -178,5 +183,24 @@ body {
 
     .mobile-demo-list-item {
         display: list-item;
+    }
+
+    .mobile-drop-btn {
+        display: inline;
+        font-size: smaller;
+        margin-left: 5px;
+        color:rgb(215, 32, 32);
+    }
+
+    .main-headings > :not(li:first-child) {
+        border: 1px solid black;
+        padding: 0;
+        position: relative;
+        font-size: 1.5rem;
+    }
+
+    .main-headings > li:hover,
+    .main-headings > li:focus {
+        box-shadow: unset;
     }
 }
