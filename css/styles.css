@@ -1,18 +1,25 @@
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/hk-grotesk.min.css");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'HK Grotesk', sans-serif;
+}
+
 .header {
     padding: 0 10%;
     position: relative;
-}
-
-nav {
-    /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.08);
+}
+
+.main-headings {
+    display: flex;
 }
 
 .main-headings > li {
@@ -26,55 +33,82 @@ nav {
 
 .main-headings > li:hover,
 .main-headings > li:focus {
-    box-shadow: 0 0 10px 0 rgb(181, 172, 172);
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.08);
 }
 
-nav ul {
-    display: flex;
+.main-headings > li:last-child {
+    box-shadow: unset;
 }
 
-.solutions {
+.main-headings a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.solutions,
+.resources,
+.why-edly {
     /* background-color: rgb(101, 101, 189); */
     position: absolute;
     max-height: 0;
-    top: 115px;
+    top: 118px;
     left: 0;
-    display: flex;
     overflow: hidden;
-    transition: all 0.5s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .header-swipe {
-    padding: 2rem;
-    height: auto;
-    box-shadow: 0 0 10px 0 rgb(181, 172, 172);
+    box-shadow:  0px 2px 15px 0px rgba(0, 0, 0, 0.08);
     transition: max-height 0.5s ease-in;
     max-height: 500px;
 }
 
-.solutions li {
+.sub-menu-wrapper {
+    display: flex;
+    padding: 2rem;
+}
+
+.sub-menu {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+}
+
+.sub-menu li {
     list-style: none;
     margin: 0.5rem 0;
     white-space: nowrap;
     transition: color 0.5s;
 }
 
-.sub-menu1 ul,
-.sub-menu2 ul,
-.sub-menu3 ul {
-    display: flex;
-    flex-direction: column;
-    margin: 0 1rem;
-}
-
-.sub-menu1 ul li:first-child,
-.sub-menu2 ul li:first-child,
-.sub-menu3 ul li:first-child {
+.solutions li:first-child {
     font-weight: bold;
 }
 
-.sub-menu1 ul :not(li:first-child):hover,
-.sub-menu2 ul :not(li:first-child):hover,
-.sub-menu3 ul :not(li:first-child):hover{
-    color: red;
+.solutions .sub-menu :not(li:first-child):hover {
+    color: rgb(215, 32, 32);
+}
+
+.why-edly li:hover,
+.why-edly li:focus,
+.resources li:hover,
+.resources li:focus {
+    color: rgb(215, 32, 32);
+}
+
+.request-demo {
+    padding: 1rem;
+    background-color: rgb(215, 32, 32);
+    border: 2px solid rgb(215, 32, 32);
+    color: white !important;
+    border-radius: 10px;
+    transition: all 0.2s ease-in;
+}
+
+.request-demo:hover {
+    padding: 1rem;
+    background-color: white;
+    color: rgb(215, 32, 32) !important;
+    border-radius: 10px;
+    border: 2px solid rgb(215, 32, 32);
 }
