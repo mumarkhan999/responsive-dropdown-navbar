@@ -11,8 +11,8 @@ body {
 }
 
 .header {
-    padding: 0 10%;
     position: relative;
+    padding: 0 10%;
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.08);
@@ -43,6 +43,10 @@ body {
 .main-headings a {
     text-decoration: none;
     color: inherit;
+}
+
+.mobile-demo-list-item {
+    display: none;
 }
 
 .solutions,
@@ -150,8 +154,29 @@ body {
         transform: rotate(-45deg) translateY(-10.5px);
     }
 
+
+    /* updated styles */
+
     .main-headings {
+        display: none;
+        background-color: yellow;
+        position: absolute;
+        flex-direction: column;
+        top: 120px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-main-headings {
+        display: flex;
+    }
+
+    .desktop-demo-list-item {
         display: none;
     }
 
+    .mobile-demo-list-item {
+        display: list-item;
+    }
 }

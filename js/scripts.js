@@ -9,6 +9,7 @@ const whyEdlySection = document.getElementsByClassName('why-edly')[0];
 
 
 const hamBurgerButton = document.getElementsByClassName('ham-burger')[0];
+const mainHeadings = document.getElementsByClassName('main-headings')[0];
 
 
 solutionsButton.addEventListener('mouseover', () => {
@@ -39,4 +40,5 @@ whyEdlyButton.addEventListener('mouseout', () => {
 
 hamBurgerButton.addEventListener('click', () => {
     hamBurgerButton.classList.toggle('clicked-ham-burger');
+    mainHeadings.classList.toggle('mobile-main-headings');
 });
