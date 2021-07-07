@@ -11,32 +11,59 @@ const whyEdlySection = document.getElementsByClassName('why-edly')[0];
 const hamBurgerButton = document.getElementsByClassName('ham-burger')[0];
 const mainHeadings = document.getElementsByClassName('main-headings')[0];
 
+// window.onresize = reportWindowSize;
 
-solutionsButton.addEventListener('mouseover', () => {
+// reportWindowSize();
+
+// function reportWindowSize() {
+//     if (window.innerWidth <= 1275) {
+//         addStartingEventListener('click', 'mouseover');
+//     } else {
+//         addStartingEventListener('mouseover', 'click');
+//     }
+// }
+
+
+// function addStartingEventListener(startingEvent, removeEvent) {
+//     console.log(startingEvent + ' ' + removeEvent);
+
+//     solutionsButton.removeEventListener(removeEvent, () => {});
+//     resourcesButton.removeEventListener(removeEvent, () => {});
+//     whyEdlyButton.removeEventListener(removeEvent, () => {});
+
+
+
+// }
+
+
+solutionsButton.addEventListener('click', () => {
     solutionsSection.classList.toggle('header-swipe');
 });
 
-solutionsButton.addEventListener('mouseout', () => {
-    solutionsSection.classList.toggle('header-swipe');
-});
-
-
-resourcesButton.addEventListener('mouseover', () => {
+resourcesButton.addEventListener('click', () => {
     resourcesSection.classList.toggle('header-swipe');
 });
 
-resourcesButton.addEventListener('mouseout', () => {
-    resourcesSection.classList.toggle('header-swipe');
-});
-
-
-whyEdlyButton.addEventListener('mouseover', () => {
+whyEdlyButton.addEventListener('click', () => {
     whyEdlySection.classList.toggle('header-swipe');
 });
 
-whyEdlyButton.addEventListener('mouseout', () => {
-    whyEdlySection.classList.toggle('header-swipe');
+
+
+solutionsSection.addEventListener('mouseout', () => {
+    solutionsSection.classList.remove('header-swipe');
 });
+
+
+resourcesSection.addEventListener('mouseout', () => {
+    resourcesSection.classList.remove('header-swipe');
+});
+
+
+whyEdlySection.addEventListener('mouseout', () => {
+    whyEdlySection.classList.remove('header-swipe');
+});
+
 
 hamBurgerButton.addEventListener('click', () => {
     hamBurgerButton.classList.toggle('clicked-ham-burger');

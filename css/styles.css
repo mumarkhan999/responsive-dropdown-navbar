@@ -164,7 +164,6 @@ body {
 
     .main-headings {
         display: none;
-        background-color: yellow;
         position: absolute;
         flex-direction: column;
         top: 120px;
@@ -203,4 +202,40 @@ body {
     .main-headings > li:focus {
         box-shadow: unset;
     }
+
+    .solutions,
+    .resources,
+    .why-edly {
+        /* background-color: rgb(101, 101, 189); */
+        position: relative;
+        max-height: 0;
+        top: unset;
+        left: unset;
+        overflow: hidden;
+        transition: all 0.2s ease-out;
+    }
+
+    .header-swipe {
+        box-shadow:  0px 2px 15px 0px rgba(0, 0, 0, 0.2);
+        transition: max-height 0.5s ease-in;
+        max-height: 800px;
+        margin: 10px 10px 0 10px;
+    }
+
+
+    .sub-menu-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        font-size: large;
+    }
+
+    .solutions li:first-child {
+        font-weight: bold;
+    }
+
+    .solutions .sub-menu :not(li:first-child):hover {
+        color: rgb(215, 32, 32);
+    }
+
 }
