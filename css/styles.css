@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 0 10%;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+}
+
+.main-headings > li {
+    /* border: 1px solid black; */
+    list-style: none;
+    text-decoration: none;
+    padding: 3rem 2rem;
+    position: relative;
+    transition: box-shadow 0.5s;
+}
+
+.main-headings >:hover,
+.main-headings >:focus {
+    box-shadow: 0 0 10px 0 rgb(181, 172, 172);
+}
+
+nav ul {
+    display: flex;
+}
+
+.solutions {
+    background-color: rgb(101, 101, 189);
+    position: absolute;
+    top: 115px;
+    left: 0;
+    display: flex;
+    padding: 2rem;
+    transform: translateY(-200%);
+    transition: transform 1s;
+}
+
+.header-swipe {
+    transform: translateY(0%);
+}
+
+.solutions li {
+    list-style: none;
+    margin: 0.5rem 0;
+    white-space: nowrap;
+    transition: color 0.5s;
+}
+
+.sub-menu1 ul,
+.sub-menu2 ul,
+.sub-menu3 ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+}
+
+.sub-menu1 ul li:first-child,
+.sub-menu2 ul li:first-child,
+.sub-menu3 ul li:first-child {
+    font-weight: bold;
+}
+
+.sub-menu1 ul :not(li:first-child):hover,
+.sub-menu2 ul :not(li:first-child):hover,
+.sub-menu3 ul :not(li:first-child):hover{
+    color: red;
+}
