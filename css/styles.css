@@ -10,9 +10,9 @@
 }
 
 nav {
+    /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
-    background-color: yellow;
 }
 
 .main-headings > li {
@@ -24,8 +24,8 @@ nav {
     transition: box-shadow 0.5s;
 }
 
-.main-headings >:hover,
-.main-headings >:focus {
+.main-headings > li:hover,
+.main-headings > li:focus {
     box-shadow: 0 0 10px 0 rgb(181, 172, 172);
 }
 
@@ -34,18 +34,22 @@ nav ul {
 }
 
 .solutions {
-    background-color: rgb(101, 101, 189);
+    /* background-color: rgb(101, 101, 189); */
     position: absolute;
+    max-height: 0;
     top: 115px;
     left: 0;
     display: flex;
-    padding: 2rem;
-    transform: translateY(-200%);
-    transition: transform 1s;
+    overflow: hidden;
+    transition: all 0.5s ease-out;
 }
 
 .header-swipe {
-    transform: translateY(0%);
+    padding: 2rem;
+    height: auto;
+    box-shadow: 0 0 10px 0 rgb(181, 172, 172);
+    transition: max-height 0.5s ease-in;
+    max-height: 500px;
 }
 
 .solutions li {
