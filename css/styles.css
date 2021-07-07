@@ -112,3 +112,46 @@ body {
     border-radius: 10px;
     border: 2px solid rgb(215, 32, 32);
 }
+
+.ham-burger {
+    display: none;
+}
+
+@media (max-width: 1275px) {
+
+
+    /* ham-burger animation */
+    .ham-burger {
+        display: block;
+        padding: 3rem 0;
+    }
+
+    .ham-burger span {
+        display: block;
+        width: 20px;
+        margin: 0.2rem;
+        border: 2px solid red;
+        border-radius: 10px;
+        transition: transform 0.2s;
+    }
+
+    .clicked-ham-burger span:nth-child(2) {
+        visibility: hidden;
+    }
+
+    .clicked-ham-burger span:nth-child(1) {
+        transform-origin: center;
+        transform: rotate(45deg) translateY(10.5px);
+
+    }
+
+    .clicked-ham-burger span:nth-child(3) {
+        transform-origin: center;
+        transform: rotate(-45deg) translateY(-10.5px);
+    }
+
+    .main-headings {
+        display: none;
+    }
+
+}
