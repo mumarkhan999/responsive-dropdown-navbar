@@ -19,94 +19,63 @@ reportWindowSize();
 
 function reportWindowSize() {
     if (window.innerWidth <= 1275) {
-        addEventListenersForMobile();
+        removeClassForMobileView();
+        // addEventListenersForMobile();
     } else {
-        addEventListenersForDesktop();
+        addClassForDesktop();
     }
 }
 
 
-function addEventListenersForMobile () {
-    $( "#solutions" ).off();
-    $( "#solutions" )
-    .click(function() {
-        this.children[0].classList.toggle('mobile-drop-btn-inverted');
-        resourcesSection.classList.remove('header-swipe');
-        whyEdlySection.classList.remove('header-swipe');
-        solutionsSection.classList.toggle('header-swipe');
-    });
-
-    $( ".solutions" ).off();
-
-
-    $( "#resources" ).off();
-    $( "#resources" )
-    .click(function() {
-        this.children[0].classList.toggle('mobile-drop-btn-inverted');
-        solutionsSection.classList.remove('header-swipe');
-        whyEdlySection.classList.remove('header-swipe');
-        resourcesSection.classList.toggle('header-swipe');
-    });
-
-    $( ".resources" ).off();
-
-
-    $( "#why-edly" ).off();
-    $( "#why-edly" )
-    .click(function() {
-        this.children[0].classList.toggle('mobile-drop-btn-inverted');
-        solutionsSection.classList.remove('header-swipe');
-        resourcesSection.classList.remove('header-swipe');
-        whyEdlySection.classList.toggle('header-swipe');
-    });
-
-    $( ".why-edly" ).off();
-
+function addClassForDesktop() {
+    solutionsSection.classList.add('menu-class');
+    resourcesSection.classList.add('menu-class');
+    whyEdlySection.classList.add('menu-class');
 }
 
 
-function addEventListenersForDesktop () {
-    $( "#solutions" ).off();
+function removeClassForMobileView() {
+    solutionsSection.classList.remove('menu-class');
+    resourcesSection.classList.remove('menu-class');
+    whyEdlySection.classList.remove('menu-class');
+}
+
+
+addEventListenersForMobile();
+
+
+function addEventListenersForMobile () {
     $( "#solutions" )
-    .mouseover(function() {
-        solutionsSection.classList.add('header-swipe');
+    .click(function() {
+        this.children[0].classList.toggle('mobile-drop-btn-inverted');
         resourcesSection.classList.remove('header-swipe');
         whyEdlySection.classList.remove('header-swipe');
+        $( "#resources .mobile-drop-btn" )[0].classList.remove('mobile-drop-btn-inverted');
+        $( "#why-edly .mobile-drop-btn" )[0].classList.remove('mobile-drop-btn-inverted');
+        solutionsSection.classList.toggle('header-swipe');
     });
 
-    $( "#solutions" )
-    .mouseleave(function() {
-        solutionsSection.classList.remove('header-swipe');
-    });
 
-
-    $( "#resources" ).off();
     $( "#resources" )
-    .mouseover(function() {
+    .click(function() {
+        this.children[0].classList.toggle('mobile-drop-btn-inverted');
         solutionsSection.classList.remove('header-swipe');
-        resourcesSection.classList.add('header-swipe');
         whyEdlySection.classList.remove('header-swipe');
+        $( "#solutions .mobile-drop-btn" )[0].classList.remove('mobile-drop-btn-inverted');
+        $( "#why-edly .mobile-drop-btn" )[0].classList.remove('mobile-drop-btn-inverted');
+        resourcesSection.classList.toggle('header-swipe');
     });
 
-    $( "#resources" )
-    .mouseleave(function() {
-        resourcesSection.classList.remove('header-swipe');
-    });
-
-
-    $( "#why-edly" ).off();
-    $( "#why-edly" )
-    .mouseover(function() {
-        solutionsSection.classList.remove('header-swipe');
-        resourcesSection.classList.remove('header-swipe');
-        whyEdlySection.classList.add('header-swipe');
-    });
 
     $( "#why-edly" )
-    .mouseleave(function() {
-        whyEdlySection.classList.remove('header-swipe');
+    .click(function() {
+        this.children[0].classList.toggle('mobile-drop-btn-inverted');
+        solutionsSection.classList.remove('header-swipe');
+        resourcesSection.classList.remove('header-swipe');
+        $( "#resources .mobile-drop-btn" )[0].classList.remove('mobile-drop-btn-inverted');
+        $( "#solutions .mobile-drop-btn" )[0].classList.remove('mobile-drop-btn-inverted');
+        whyEdlySection.classList.toggle('header-swipe');
     });
-
 }
 
 

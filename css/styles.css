@@ -60,16 +60,15 @@ body {
     /* background-color: yellow; */
     position: absolute;
     max-height: 0;
-    top: 118px;
+    top: 100%;
     left: 0;
     overflow: hidden;
-    transition: all 0.5s ease-out;
+    transition: all 0.2s ease-out;
+    box-shadow:  0px 2px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
-.header-swipe {
-    box-shadow:  0px 2px 15px 0px rgba(0, 0, 0, 0.08);
-    transition: all 0.5s ease-in;
-    max-height: 500px;
+.main-headings li:hover > .menu-class {
+    max-height: 800px;
 }
 
 .sub-menu-wrapper {
@@ -225,10 +224,11 @@ body {
         left: unset;
         overflow: hidden;
         transition: all 0.5s ease-out;
+        box-shadow:  0px 2px 15px 0px rgba(0, 0, 0, 0.2);
     }
 
     .header-swipe {
-        box-shadow:  0px 2px 15px 0px rgba(0, 0, 0, 0.2);
+        /* box-shadow:  0px 2px 15px 0px rgba(0, 0, 0, 0.2); */
         transition: all 0.5s ease-in;
         max-height: 800px;
         margin: 10px 10px 0 10px;
@@ -249,5 +249,4 @@ body {
     .solutions .sub-menu :not(li:first-child):hover {
         color: rgb(215, 32, 32);
     }
-
 }
