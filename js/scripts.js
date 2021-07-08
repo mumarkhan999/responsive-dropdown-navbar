@@ -110,9 +110,6 @@ function addEventListenersForDesktop () {
 }
 
 
-
-
-
 hamBurgerButton.addEventListener('click', () => {
     hamBurgerButton.classList.toggle('clicked-ham-burger');
     mainHeadings.classList.toggle('mobile-main-headings');
