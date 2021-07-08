@@ -11,74 +11,46 @@ const whyEdlySection = document.getElementsByClassName('why-edly')[0];
 const hamBurgerButton = document.getElementsByClassName('ham-burger')[0];
 const mainHeadings = document.getElementsByClassName('main-headings')[0];
 
-// window.onresize = reportWindowSize;
-
-// reportWindowSize();
-
-// function reportWindowSize() {
-//     if (window.innerWidth <= 1275) {
-//         addStartingEventListener('click', 'mouseover');
-//     } else {
-//         addStartingEventListener('mouseover', 'click');
-//     }
-// }
 
 
-// function addStartingEventListener(startingEvent, removeEvent) {
-//     console.log(startingEvent + ' ' + removeEvent);
-
-//     solutionsButton.removeEventListener(removeEvent, () => {});
-//     resourcesButton.removeEventListener(removeEvent, () => {});
-//     whyEdlyButton.removeEventListener(removeEvent, () => {});
-
-
-
-// }
-
-
-solutionsButton.addEventListener('click', () => {
-    solutionsSection.classList.toggle('header-swipe');
+$( "#solutions" )
+  .mouseover(function() {
+    solutionsSection.classList.add('header-swipe');
+    resourcesSection.classList.remove('header-swipe');
+    whyEdlySection.classList.remove('header-swipe');
 });
 
-resourcesButton.addEventListener('click', () => {
-    resourcesSection.classList.toggle('header-swipe');
-});
-
-whyEdlyButton.addEventListener('click', () => {
-    whyEdlySection.classList.toggle('header-swipe');
+$( ".solutions" )
+  .mouseleave(function() {
+    solutionsSection.classList.remove('header-swipe');
 });
 
 
-function isParent(refNode, otherNode) {
-	var parent = otherNode.parentNode;
-	do {
-		if (refNode == parent) {
-			return true;
-		} else {
-			parent = parent.parentNode;
-		}
-	} while (parent);
-	return false;
-}
+$( "#resources" )
+  .mouseover(function() {
+    solutionsSection.classList.remove('header-swipe');
+    resourcesSection.classList.add('header-swipe');
+    whyEdlySection.classList.remove('header-swipe');
+});
+
+$( ".resources" )
+  .mouseleave(function() {
+    resourcesSection.classList.remove('header-swipe');
+});
 
 
-solutionsSection.addEventListener("mouseout", function(ev){
-	if (!isParent(this, ev.relatedTarget)){
-        solutionsSection.classList.remove('header-swipe');
-	}
-}, false);
 
-resourcesSection.addEventListener("mouseout", function(ev){
-	if (!isParent(this, ev.relatedTarget)){
-        resourcesSection.classList.remove('header-swipe');
-	}
-}, false);
+$( "#why-edly" )
+  .mouseover(function() {
+    solutionsSection.classList.remove('header-swipe');
+    resourcesSection.classList.remove('header-swipe');
+    whyEdlySection.classList.add('header-swipe');
+});
 
-whyEdlySection.addEventListener("mouseout", function(ev){
-	if (!isParent(this, ev.relatedTarget)){
-        whyEdlySection.classList.remove('header-swipe');
-	}
-}, false);
+$( ".why-edly" )
+  .mouseleave(function() {
+    whyEdlySection.classList.remove('header-swipe');
+});
 
 
 hamBurgerButton.addEventListener('click', () => {

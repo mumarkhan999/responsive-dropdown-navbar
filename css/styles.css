@@ -57,7 +57,7 @@ body {
 .solutions,
 .resources,
 .why-edly {
-    background-color: yellow;
+    /* background-color: yellow; */
     position: absolute;
     max-height: 0;
     top: 118px;
