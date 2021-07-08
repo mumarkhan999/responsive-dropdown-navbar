@@ -63,12 +63,12 @@ body {
     top: 118px;
     left: 0;
     overflow: hidden;
-    transition: all 0.2s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .header-swipe {
     box-shadow:  0px 2px 15px 0px rgba(0, 0, 0, 0.08);
-    transition: max-height 0.5s ease-in;
+    transition: all 0.5s ease-in;
     max-height: 500px;
 }
 
@@ -161,6 +161,9 @@ body {
 
 
     /* updated styles */
+    .header-expanded {
+        box-shadow: unset;
+    }
 
     .main-headings {
         display: none;
@@ -170,10 +173,12 @@ body {
         left: 0;
         width: 100%;
         text-align: center;
+        padding-bottom: 1rem;
     }
 
     .mobile-main-headings {
         display: flex;
+        box-shadow:  0px 2px 3px 0px rgba(0, 0, 0, 0.2);
     }
 
     .desktop-demo-list-item {
@@ -185,14 +190,21 @@ body {
     }
 
     .mobile-drop-btn {
-        display: inline;
+        display: inline-block;
         font-size: smaller;
         margin-left: 5px;
         color:rgb(215, 32, 32);
+        transform: rotate(180deg);
+        transition: transform 1s;
+    }
+
+    .mobile-drop-btn-inverted {
+        transform-origin: center;
+        transform: rotate(0deg);
     }
 
     .main-headings > :not(li:first-child) {
-        border: 1px solid black;
+        /* border: 1px solid black; */
         padding: 0;
         position: relative;
         font-size: 1.5rem;
@@ -212,12 +224,12 @@ body {
         top: unset;
         left: unset;
         overflow: hidden;
-        transition: all 0.2s ease-out;
+        transition: all 0.5s ease-out;
     }
 
     .header-swipe {
         box-shadow:  0px 2px 15px 0px rgba(0, 0, 0, 0.2);
-        transition: max-height 0.5s ease-in;
+        transition: all 0.5s ease-in;
         max-height: 800px;
         margin: 10px 10px 0 10px;
     }
